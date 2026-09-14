@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 12px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #2f5233, #1b3a2b);
+}
+
+/* Celulares pequeños */
+@media (min-width: 380px) {
+  body {
+    padding: 32px 16px;
+  }
+}
+
+#contenedor-primates {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjeta-primate {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-primate:hover {
+  transform: translateY(-6px);
+}
+
+.imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 18px 20px 20px;
+}
+
+.tituloNombre {
+  margin: 0 0 4px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #1b3a2b;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #6b7d70;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eef1ee;
+  font-size: 0.92rem;
+}
+
+.fila:last-of-type {
+  border-bottom: none;
+}
+
+.etiqueta {
+  color: #6b7d70;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.valor {
+  color: #1b1b1b;
+  font-weight: 600;
+  text-align: right;
+  font-size: 0.85rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.badge.si {
+  background: #d9534f;
+}
+
+.badge.no {
+  background: #4caf7d;
+}
+
+/* Tablet: 2 columnas */
+@media (min-width: 600px) {
+  #contenedor-primates {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Escritorio: 3 columnas */
+@media (min-width: 900px) {
+  #contenedor-primates {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .imagen {
+    height: 220px;
+  }
+}
+
+/* Pantallas grandes: 4 columnas */
+@media (min-width: 1200px) {
+  #contenedor-primates {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+  }
+}
